@@ -5,7 +5,7 @@ import io
 import base64
 
 model_id = "runwayml/stable-diffusion-v1-5"
-pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
+pipe = StableDiffusionPipeline.from_single_file(model_id, torch_dtype=torch.float16)
 pipe = pipe.to("cuda")
 
 def pil_to_b64(image: Image.Image) -> str:
